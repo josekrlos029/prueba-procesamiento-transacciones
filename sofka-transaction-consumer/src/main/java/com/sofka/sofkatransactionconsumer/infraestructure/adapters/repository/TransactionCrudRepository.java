@@ -8,8 +8,8 @@ import java.time.LocalDateTime;
 
 public interface TransactionCrudRepository extends MongoRepository<TransactionEntity, String> {
 
-    @Query(value = "{timestamp: { $gte: ?0 }}", count = true)
-    Long countTransactions(LocalDateTime now);
+    @Query(value = "{createdAt: { $gte: ?0, $lte: ?1 }}", count = true)
+    Long countTransactions(LocalDateTime startOfDay, LocalDateTime endOfDay);
 
 
 }

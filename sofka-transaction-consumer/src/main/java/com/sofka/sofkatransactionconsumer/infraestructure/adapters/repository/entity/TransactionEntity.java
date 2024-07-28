@@ -22,5 +22,6 @@ public class TransactionEntity {
     private Long userId;
     private String geoPosition;
     private Double amount;
+    private LocalDateTime createdAt;
 
 }

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.ZoneId;
 
 @Component
 @RequiredArgsConstructor
@@ -28,6 +29,7 @@ public class TransactionRepositoryImpl implements TransactionRepository {
         transactionEntity.setUserId(transaction.getUserId());
         transactionEntity.setGeoPosition(transaction.getGeoPosition());
         transactionEntity.setAmount(transaction.getAmount());
+        transactionEntity.setCreatedAt(LocalDateTime.now());
 
         transactionCrudRepository.save(transactionEntity);
         return transaction;
@@ -35,8 +37,9 @@ public class TransactionRepositoryImpl implements TransactionRepository {
 
     @Override
     public Long getTodayTransactionCount() {
-        LocalDateTime lt  = LocalDate.now().atTime(LocalTime.MIN);
-        return transactionCrudRepository.countTransactions(lt);
+        LocalDateTime gte  = LocalDate.now().atTime(LocalTime.MIN);
+        LocalDateTime lte  = LocalDate.now().atTime(LocalTime.MAX);
+        return transactionCrudRepository.countTransactions(gte, lte);
     }
 
 
