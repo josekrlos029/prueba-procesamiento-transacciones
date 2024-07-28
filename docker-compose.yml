@@ -1,0 +1,138 @@
+version: "3"
+services:
+#/*SOFKA SERVICES
+  transaction-service:
+    build: ./sofka-transaction-service
+    environment:
+      - PORT=8080
+      - KAFKA_BOOTSTRAP_SERVERS=kafka1:9092,kafka2:9093
+    ports:
+      - 8080:8080
+    depends_on:
+      - kafka1
+      - kafka2
+  transaction-consumer1:
+    build: ./sofka-transaction-consumer
+    environment:
+      - KAFKA_BOOTSTRAP_SERVERS=kafka1:9092,kafka2:9093
+      - MONGO_HOST=mongo1
+    depends_on:
+      - kafka1
+      - kafka2
+      - mongo1
+      - mongo2
+      - mongo3
+  transaction-consumer2:
+    build: ./sofka-transaction-consumer
+    environment:
+      - KAFKA_BOOTSTRAP_SERVERS=kafka1:9092,kafka2:9093
+      - MONGO_HOST=mongo1
+    depends_on:
+      - kafka1
+      - kafka2
+      - mongo1
+      - mongo2
+      - mongo3
+  transaction-consumer3:
+    build: ./sofka-transaction-consumer
+    environment:
+      - KAFKA_BOOTSTRAP_SERVERS=kafka1:9092,kafka2:9093
+      - MONGO_HOST=mongo1
+    depends_on:
+      - kafka1
+      - kafka2
+      - mongo1
+      - mongo2
+      - mongo3
+#SOFKA SERVICES*/
+
+#/* KAFKA CLUSTER
+  zookeeper:
+    image: confluentinc/cp-zookeeper:latest
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    ports:
+      - 22181:2181
+  
+  kafka1:
+    image: confluentinc/cp-kafka:latest
+    depends_on:
+      - zookeeper
+    ports:
+      - 29092:29092
+    environment:
+      KAFKA_BROKER_ID: 0
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka1:9092,PLAINTEXT_HOST://localhost:29092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_NUM_PARTITIONS: 3
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
+      BOOTSTRAP_SERVERS: kafka1:9092,kafka2:9093
+  
+  kafka2:
+    image: confluentinc/cp-kafka:latest
+    depends_on:
+      - zookeeper
+    ports:
+      - 29093:29093
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka2:9093,PLAINTEXT_HOST://localhost:29093
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_NUM_PARTITIONS: 3
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
+      BOOTSTRAP_SERVERS: kafka1:9092,kafka2:9093
+
+  kafka-ui:
+    image: provectuslabs/kafka-ui:latest
+    depends_on:
+      - kafka1
+      - kafka2
+    ports:
+      - 8090:8080
+    environment:
+      KAFKA_CLUSTERS_0_NAME: local
+      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka1:9092,kafka2:9093
+      KAFKA_CLUSTERS_0_ZOOKEEPER: zookeeper:2181
+
+#KAFKA CLUSTER */
+
+#/* MONGODB CLUSTER
+  mongo1:
+    image: mongo:6
+    hostname: mongo1
+    container_name: mongo1
+    ports:
+      - 27017:27017
+    entrypoint: ["mongod", "--replSet", "myReplicaSet", "--bind_ip", "localhost,mongo1"]
+  mongo2:
+    image: mongo:6
+    hostname: mongo2
+    container_name: mongo2
+    ports:
+      - 27018:27017
+    entrypoint: ["mongod", "--replSet", "myReplicaSet", "--bind_ip", "localhost,mongo2"]
+  mongo3:
+    image: mongo:6
+    hostname: mongo3
+    container_name: mongo3
+    ports:
+      - 27019:27017
+    entrypoint: ["mongod", "--replSet", "myReplicaSet", "--bind_ip", "localhost,mongo3"]
+  mongosetup:
+    image: mongo:6
+    depends_on:
+      - mongo1
+      - mongo2
+      - mongo3
+    volumes:
+      - ./mongo-cluster:/mongo-cluster
+    restart: "no"
+    entrypoint: [ "bash", "/mongo-cluster/mongo.sh"]
+#MONGODB CLUSTER */
