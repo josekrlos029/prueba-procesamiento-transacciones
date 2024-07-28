@@ -14,7 +14,7 @@ public class ScheduledTaskImpl implements ScheduledTask {
 
     @Override
     //@Scheduled(cron = "59 59 23 * * *")
-    @Scheduled(cron = "*/5 * * * * *")
+    @Scheduled(cron = "0 */5 * * * *")
     public void transactionCounter() {
         transactionService.transactionCounter();
     }

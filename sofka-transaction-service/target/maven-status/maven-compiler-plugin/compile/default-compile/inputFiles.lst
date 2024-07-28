@@ -1,0 +1,14 @@
+C:\Users\josek\Documents\code\SOFKA\prueba_tecnica\sofka-transaction-service\src\main\java\com\sofka\sofkatransactionservice\application\rest\ExceptionHandlerRest.java
+C:\Users\josek\Documents\code\SOFKA\prueba_tecnica\sofka-transaction-service\src\main\java\com\sofka\sofkatransactionservice\application\rest\request\TransactionRequest.java
+C:\Users\josek\Documents\code\SOFKA\prueba_tecnica\sofka-transaction-service\src\main\java\com\sofka\sofkatransactionservice\application\rest\response\TransactionResponse.java
+C:\Users\josek\Documents\code\SOFKA\prueba_tecnica\sofka-transaction-service\src\main\java\com\sofka\sofkatransactionservice\application\rest\TransactionRestHandler.java
+C:\Users\josek\Documents\code\SOFKA\prueba_tecnica\sofka-transaction-service\src\main\java\com\sofka\sofkatransactionservice\configuration\TransactionConfig.java
+C:\Users\josek\Documents\code\SOFKA\prueba_tecnica\sofka-transaction-service\src\main\java\com\sofka\sofkatransactionservice\domain\exception\TransactionException.java
+C:\Users\josek\Documents\code\SOFKA\prueba_tecnica\sofka-transaction-service\src\main\java\com\sofka\sofkatransactionservice\domain\model\Transaction.java
+C:\Users\josek\Documents\code\SOFKA\prueba_tecnica\sofka-transaction-service\src\main\java\com\sofka\sofkatransactionservice\domain\ports\event\EventPublisher.java
+C:\Users\josek\Documents\code\SOFKA\prueba_tecnica\sofka-transaction-service\src\main\java\com\sofka\sofkatransactionservice\domain\ports\task\ScheduledTask.java
+C:\Users\josek\Documents\code\SOFKA\prueba_tecnica\sofka-transaction-service\src\main\java\com\sofka\sofkatransactionservice\domain\service\TransactionService.java
+C:\Users\josek\Documents\code\SOFKA\prueba_tecnica\sofka-transaction-service\src\main\java\com\sofka\sofkatransactionservice\domain\service\TransactionServiceImpl.java
+C:\Users\josek\Documents\code\SOFKA\prueba_tecnica\sofka-transaction-service\src\main\java\com\sofka\sofkatransactionservice\infraestructure\adapters\event\EventPublisherImpl.java
+C:\Users\josek\Documents\code\SOFKA\prueba_tecnica\sofka-transaction-service\src\main\java\com\sofka\sofkatransactionservice\infraestructure\adapters\task\ScheduledTaskImpl.java
+C:\Users\josek\Documents\code\SOFKA\prueba_tecnica\sofka-transaction-service\src\main\java\com\sofka\sofkatransactionservice\SofkaTransactionServiceApplication.java
