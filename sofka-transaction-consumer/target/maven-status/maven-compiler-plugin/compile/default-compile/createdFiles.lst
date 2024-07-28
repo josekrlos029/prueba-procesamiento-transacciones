@@ -1,0 +1,17 @@
+com\sofka\sofkatransactionconsumer\configuration\TransactionConfig.class
+com\sofka\sofkatransactionconsumer\infraestructure\adapters\repository\entity\TransactionCounterEntity.class
+com\sofka\sofkatransactionconsumer\configuration\KafkaConsumerConfig.class
+com\sofka\sofkatransactionconsumer\infraestructure\adapters\repository\TransactionCounterCrudRepository.class
+com\sofka\sofkatransactionconsumer\domain\model\Transaction.class
+com\sofka\sofkatransactionconsumer\infraestructure\adapters\repository\TransactionCounterRepositoryImpl.class
+com\sofka\sofkatransactionconsumer\domain\port\repository\TransactionCounterRepository.class
+com\sofka\sofkatransactionconsumer\infraestructure\adapters\repository\TransactionCrudRepository.class
+com\sofka\sofkatransactionconsumer\infraestructure\adapters\repository\TransactionRepositoryImpl.class
+com\sofka\sofkatransactionconsumer\domain\service\TransactionServiceImpl.class
+com\sofka\sofkatransactionconsumer\SofkaTransactionConsumerApplication.class
+com\sofka\sofkatransactionconsumer\domain\port\event\EventConsumer.class
+com\sofka\sofkatransactionconsumer\infraestructure\adapters\repository\entity\TransactionEntity.class
+com\sofka\sofkatransactionconsumer\domain\model\TransactionCounter.class
+com\sofka\sofkatransactionconsumer\domain\service\TransactionService.class
+com\sofka\sofkatransactionconsumer\infraestructure\adapters\event\EventConsumerImpl.class
+com\sofka\sofkatransactionconsumer\domain\port\repository\TransactionRepository.class

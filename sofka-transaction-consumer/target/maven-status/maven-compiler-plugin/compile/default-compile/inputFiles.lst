@@ -1,0 +1,17 @@
+C:\Users\josek\Documents\code\SOFKA\prueba_tecnica\sofka-transaction-consumer\src\main\java\com\sofka\sofkatransactionconsumer\configuration\KafkaConsumerConfig.java
+C:\Users\josek\Documents\code\SOFKA\prueba_tecnica\sofka-transaction-consumer\src\main\java\com\sofka\sofkatransactionconsumer\configuration\TransactionConfig.java
+C:\Users\josek\Documents\code\SOFKA\prueba_tecnica\sofka-transaction-consumer\src\main\java\com\sofka\sofkatransactionconsumer\domain\model\Transaction.java
+C:\Users\josek\Documents\code\SOFKA\prueba_tecnica\sofka-transaction-consumer\src\main\java\com\sofka\sofkatransactionconsumer\domain\model\TransactionCounter.java
+C:\Users\josek\Documents\code\SOFKA\prueba_tecnica\sofka-transaction-consumer\src\main\java\com\sofka\sofkatransactionconsumer\domain\port\event\EventConsumer.java
+C:\Users\josek\Documents\code\SOFKA\prueba_tecnica\sofka-transaction-consumer\src\main\java\com\sofka\sofkatransactionconsumer\domain\port\repository\TransactionCounterRepository.java
+C:\Users\josek\Documents\code\SOFKA\prueba_tecnica\sofka-transaction-consumer\src\main\java\com\sofka\sofkatransactionconsumer\domain\port\repository\TransactionRepository.java
+C:\Users\josek\Documents\code\SOFKA\prueba_tecnica\sofka-transaction-consumer\src\main\java\com\sofka\sofkatransactionconsumer\domain\service\TransactionService.java
+C:\Users\josek\Documents\code\SOFKA\prueba_tecnica\sofka-transaction-consumer\src\main\java\com\sofka\sofkatransactionconsumer\domain\service\TransactionServiceImpl.java
+C:\Users\josek\Documents\code\SOFKA\prueba_tecnica\sofka-transaction-consumer\src\main\java\com\sofka\sofkatransactionconsumer\infraestructure\adapters\event\EventConsumerImpl.java
+C:\Users\josek\Documents\code\SOFKA\prueba_tecnica\sofka-transaction-consumer\src\main\java\com\sofka\sofkatransactionconsumer\infraestructure\adapters\repository\entity\TransactionCounterEntity.java
+C:\Users\josek\Documents\code\SOFKA\prueba_tecnica\sofka-transaction-consumer\src\main\java\com\sofka\sofkatransactionconsumer\infraestructure\adapters\repository\entity\TransactionEntity.java
+C:\Users\josek\Documents\code\SOFKA\prueba_tecnica\sofka-transaction-consumer\src\main\java\com\sofka\sofkatransactionconsumer\infraestructure\adapters\repository\TransactionCounterCrudRepository.java
+C:\Users\josek\Documents\code\SOFKA\prueba_tecnica\sofka-transaction-consumer\src\main\java\com\sofka\sofkatransactionconsumer\infraestructure\adapters\repository\TransactionCounterRepositoryImpl.java
+C:\Users\josek\Documents\code\SOFKA\prueba_tecnica\sofka-transaction-consumer\src\main\java\com\sofka\sofkatransactionconsumer\infraestructure\adapters\repository\TransactionCrudRepository.java
+C:\Users\josek\Documents\code\SOFKA\prueba_tecnica\sofka-transaction-consumer\src\main\java\com\sofka\sofkatransactionconsumer\infraestructure\adapters\repository\TransactionRepositoryImpl.java
+C:\Users\josek\Documents\code\SOFKA\prueba_tecnica\sofka-transaction-consumer\src\main\java\com\sofka\sofkatransactionconsumer\SofkaTransactionConsumerApplication.java
